@@ -1,0 +1,9 @@
+// FONT
+
+@mixin font($family, $weight: normal, $style: normal, $fallback: sans-serif) {
+  font-family: $family, $fallback;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+// MEDIA QUERY

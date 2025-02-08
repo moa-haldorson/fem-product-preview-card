@@ -1,3 +1,17 @@
 // COLORS 🎨
-$dark-cyan: hsl(158, 36%, 37%);
+$darkCyan: hsl(158, 36%, 37%);
 $cream: hsl(30, 38%, 92%);
+$veryDarkBlue: hsl(212, 21%, 14%);
+$darkGrayishBlue: hsl(228, 12%, 48%);
+$white: hsl(0, 0%, 100%);
+
+// TYPOGRAPHY 📝
+$fontMontserrat: "Montserrat";
+$fontFraunces: "Fraunces";
+$fontSizeParagraph: 0.875rem;
+
+// BREAKPOINTS 📱
+$breakpoints: (
+  mobile: 375px,
+  desktop: 1440px,
+);
