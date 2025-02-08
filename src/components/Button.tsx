@@ -1,10 +1,15 @@
 import React from "react";
+import styles from "./Button.module.scss";
 
-const Button: React.FC<{ text: string; icon: string }> = ({ text, icon }) => {
+interface ButtonProps {
+  children: React.ReactNode;
+  onClick?: () => void;
+}
+
+const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
   return (
-    <button>
-      {text}
-      <img src={icon} alt="" />
+    <button className={styles.button} onClick={onClick}>
+      {children}
     </button>
   );
 };

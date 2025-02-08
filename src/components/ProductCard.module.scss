@@ -1,0 +1,32 @@
+@use "../styles/abstracts" as a;
+
+.productCard {
+  display: flex;
+  max-width: 640px;
+  background-color: a.$white;
+
+  @include a.breakpoint-down(mobile) {
+    flex-direction: column;
+  }
+
+  &__image {
+    object-fit: cover;
+    flex-basis: 50%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    flex-basis: 50%;
+
+    &__headline {
+      text-transform: uppercase;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+@use "../styles/abstracts" as a;
+
+.button {
+  background-color: a.$darkCyan;
+  @include a.font(a.$fontMontserrat, 400, normal, sans-serif);
+}

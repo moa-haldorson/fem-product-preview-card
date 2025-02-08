@@ -1,5 +1,6 @@
-// FONT
+@use "variables" as v;
 
+// FONT
 @mixin font($family, $weight: normal, $style: normal, $fallback: sans-serif) {
   font-family: $family, $fallback;
   font-weight: $weight;
@@ -7,3 +8,8 @@
 }
 
 // MEDIA QUERY
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get(v.$breakpoints, $size)) {
+    @content;
+  }
+}

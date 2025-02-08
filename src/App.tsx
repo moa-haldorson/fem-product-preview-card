@@ -1,9 +1,12 @@
-import Card from "./components/Card";
+import React from "react";
+import styles from "./App.module.scss";
+import ProductCard from "./components/ProductCard";
+import productData from "./data/productData.json";
 
 const App = () => {
   return (
-    <div>
-      App and a <Card />
+    <div className={styles.cardContainer}>
+      <ProductCard {...productData} />
     </div>
   );
 };
