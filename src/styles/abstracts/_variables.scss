@@ -9,9 +9,10 @@ $white: hsl(0, 0%, 100%);
 $fontMontserrat: "Montserrat";
 $fontFraunces: "Fraunces";
 $fontSizeParagraph: 0.875rem;
+$fontSizeHeadings: 2.25rem; // estimate
 
 // BREAKPOINTS 📱
 $breakpoints: (
-  mobile: 375px,
+  mobile: 576px,
   desktop: 1440px,
 );

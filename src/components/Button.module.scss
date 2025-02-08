@@ -1,6 +1,20 @@
 @use "../styles/abstracts" as a;
 
 .button {
+  @include a.font(a.$fontMontserrat, 500, normal, sans-serif);
+  color: a.$white;
+  font-size: a.$fontSizeParagraph;
   background-color: a.$darkCyan;
-  @include a.font(a.$fontMontserrat, 400, normal, sans-serif);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken(a.$darkCyan, 15%);
+  }
 }

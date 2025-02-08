@@ -10,7 +10,7 @@ interface ProductCardProps {
   description: string;
   price: number;
   prevPrice?: number;
-  images: {
+  image: {
     desktop: string;
     mobile: string;
   };
@@ -22,35 +22,31 @@ const ProductCard: React.FC<ProductCardProps> = ({
   description,
   price,
   prevPrice,
-  images,
+  image,
 }) => {
   return (
     <div className={styles.productCard}>
-      <div className={styles.productCard__image}>
+      <div className={styles["productCard__image"]}>
         <picture>
-          <source media="(max-width: 375px)" srcSet={images.mobile} />
-          <img src={images.desktop} alt={title} />
+          <source media="(max-width: 576px)" srcSet={image.mobile} />
+          <img src={image.desktop} alt={title} />
         </picture>
       </div>
-      <div className={styles.productCard__content}>
-        <span className={styles.productCard__content__headline}>
-          {productType}
-        </span>
-        <h2 className={styles.productCard__content__title}>{title}</h2>
-        <p className={styles.productCard__content__description}>
-          {description}
-        </p>
-        <div className={styles.productCard__content__pricing}>
-          <span className={styles.productCard__content__price}>{price}</span>
+      <div className={styles["productCard__content"]}>
+        <span className={styles["productCard__headline"]}>{productType}</span>
+        <h2 className={styles["productCard__title"]}>{title}</h2>
+        <p className={styles["productCard__description"]}>{description}</p>
+        <div className={styles["productCard__priceContainer"]}>
+          <span className={styles["productCard__price"]}>${price}</span>
           {prevPrice && (
-            <span className={styles.productCard__content__prevPrice}>
-              {prevPrice}
+            <span className={styles["productCard__price--prev"]}>
+              ${prevPrice}
             </span>
           )}
         </div>
         <Button>
           <CartIcon />
-          Add to cart
+          Add to Cart
         </Button>
       </div>
     </div>

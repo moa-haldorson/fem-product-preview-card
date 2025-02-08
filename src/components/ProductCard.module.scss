@@ -2,31 +2,100 @@
 
 .productCard {
   display: flex;
-  max-width: 640px;
+  max-width: 630px;
   background-color: a.$white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+  button {
+    margin-top: auto;
+  }
 
   @include a.breakpoint-down(mobile) {
     flex-direction: column;
+    max-width: 400px;
   }
 
   &__image {
-    object-fit: cover;
     flex-basis: 50%;
+    flex-shrink: 1;
+    flex-grow: 1;
+
+    @include a.breakpoint-down(mobile) {
+      max-width: 100%;
+    }
+
+    picture {
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
   }
 
   &__content {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 2.25rem;
     flex-basis: 50%;
+    flex-shrink: 0;
+    flex-grow: 0;
+    gap: 1.75rem;
 
-    &__headline {
-      text-transform: uppercase;
+    @include a.breakpoint-down(mobile) {
+      padding: 1.5rem;
+      gap: 1.3rem;
     }
+  }
 
-    &__title {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
+  &__headline {
+    @include a.font(a.$fontMontserrat, 500, normal, sans-serif);
+    text-transform: uppercase;
+    color: a.$darkGrayishBlue;
+    letter-spacing: 0.4rem;
+    font-size: a.$fontSizeParagraph;
+  }
+
+  &__title {
+    @include a.font(a.$fontFraunces, 700, normal, serif);
+    font-size: a.$fontSizeHeadings;
+    color: a.$veryDarkBlue;
+    line-height: 1;
+  }
+
+  &__description {
+    @include a.font(a.$fontMontserrat, 500, normal, sans-serif);
+    color: a.$darkGrayishBlue;
+    font-size: a.$fontSizeParagraph;
+    line-height: 1.75;
+  }
+
+  &__priceContainer {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    @include a.breakpoint-down(mobile) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__price {
+    @include a.font(a.$fontFraunces, 700, normal, serif);
+    color: a.$darkCyan;
+    font-size: a.$fontSizeHeadings;
+    line-height: 1;
+
+    &--prev {
+      @include a.font(a.$fontMontserrat, 500, normal, sans-serif);
+      color: a.$darkGrayishBlue;
+      font-size: a.$fontSizeParagraph;
+      text-decoration: line-through;
     }
   }
 }
