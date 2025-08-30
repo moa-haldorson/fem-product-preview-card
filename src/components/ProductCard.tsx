@@ -44,8 +44,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             </span>
           )}
         </div>
-        <Button>
-          <CartIcon />
+        <Button iconPosition="left" icon={<CartIcon />}>
           Add to Cart
         </Button>
       </div>

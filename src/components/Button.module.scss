@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "../styles/abstracts" as a;
 
 .button {
@@ -15,6 +16,17 @@
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: darken(a.$darkCyan, 15%);
+    background-color: color.adjust(a.$darkCyan, $lightness: -15%);
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+      fill: currentColor; // inherit color from parent
+    }
   }
 }
